@@ -1,0 +1,22 @@
+{
+  "name": "movie-explorer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AlexKosova/movies-explorer-api.git"
+  },
+  "author": "AlexKosova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKosova/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/AlexKosova/movies-explorer-api#readme"
+}
