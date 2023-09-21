@@ -11,12 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:AlexKosova/movies-explorer-api.git"
+    "url": "git+ssh://git@github.com/AlexKosova/movies-explorer-api.git"
   },
   "author": "AlexKosova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AlexKosova/movies-explorer-api/issues"
   },
-  "homepage": "https://github.com/AlexKosova/movies-explorer-api#readme"
+  "homepage": "https://github.com/AlexKosova/movies-explorer-api#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.2",
+    "nodemon": "^3.0.1",
+    "validator": "^13.11.0",
+    "winston": "^3.10.0"
+  }
 }
