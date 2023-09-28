@@ -5,7 +5,7 @@ const { errors } = require('celebrate');
 const BodyParser = require('body-parser');
 const cors = require('cors');
 const errorMiddlware = require('./middlewares/errors');
-const routes = require('./routes/routes');
+const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const allowedCors = [
@@ -55,7 +55,7 @@ app.use(errors());
 app.use(errorMiddlware);
 
 async function connect() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+  await mongoose.connect('mongodb://127.0.0.1:27017/bitfilmsdb');
   app.listen(PORT);
 }
 

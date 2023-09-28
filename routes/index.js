@@ -4,7 +4,7 @@ const NotFoundError = require('../errors/NotFoundError');
 const userRouter = require('./users');
 const movieRouter = require('./movies');
 const auth = require('../middlewares/auth');
-const { login, createUser } = require('../controllers/users');
+const { login, createUser, signout } = require('../controllers/users');
 
 // routes.get('/crash-test', () => {
 //   setTimeout(() => {
@@ -26,6 +26,8 @@ routes.post('/signup', celebrate({
     name: Joi.string().min(2).max(30),
   }),
 }), createUser);
+
+routes.post('/signout', signout);
 
 routes.use(auth);
 
