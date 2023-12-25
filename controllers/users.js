@@ -41,7 +41,6 @@ const createUser = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-
   User.findByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_KEY : 'secret-11', {
@@ -73,7 +72,7 @@ const updateProfile = (req, res, next) => {
   const { _id } = req.user;
   const data = {
     name: req.body.name,
-    about: req.body.about,
+    email: req.body.email,
   };
   User.findByIdAndUpdate(_id, data, { new: true, runValidators: true })
     .then((user) => {

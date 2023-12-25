@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
   let payload;
 
   try {
-    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_KEY : 'secret-12');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_KEY : 'secret-11');
   } catch (err) {
     return next(new AuthError('Необходимо авторизоваться'));
   }

@@ -9,14 +9,14 @@ const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const allowedCors = [
-  'http://m-explorer.front.alexk.nomoredomainsrocks.ru',
-  'https://m-explorer.front.alexk.nomoredomainsrocks.ru',
+  'http://movies-explorer.alexk.nomoredomainsrocks.ru',
+  'https://movies-explorer.alexk.nomoredomainsrocks.ru',
   'http://127.0.0.1:3001',
   'http://localhost:3000',
   'http://localhost:3001',
 ];
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3001 } = process.env;
 const app = express();
 
 app.use(BodyParser.json());
@@ -60,3 +60,4 @@ async function connect() {
 }
 
 connect();
+// 'mongodb://127.0.0.1:27017/bitfilmsdb'

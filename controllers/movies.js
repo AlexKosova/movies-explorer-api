@@ -5,7 +5,7 @@ const ForbiddenErr = require('../errors/ForbiddenErr');
 
 const createMovie = (req, res, next) => {
   const newMovie = {
-    coutry: req.body.coutry,
+    country: req.body.country,
     director: req.body.director,
     duration: req.body.duration,
     year: req.body.year,
@@ -14,7 +14,7 @@ const createMovie = (req, res, next) => {
     trailerLink: req.body.trailerLink,
     nameRU: req.body.nameRU,
     nameEN: req.body.nameEN,
-    thubnail: req.body.thubnail,
+    thumbnail: req.body.thumbnail,
     movieId: req.body.movieId,
     owner: req.user._id,
   };
