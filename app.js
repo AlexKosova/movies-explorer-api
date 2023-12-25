@@ -11,7 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const allowedCors = [
   'http://movies-explorer.alexk.nomoredomainsrocks.ru',
   'https://movies-explorer.alexk.nomoredomainsrocks.ru',
-  'http://127.0.0.1:3001',
+  'http://127.0.0.1:3000',
   'http://localhost:3000',
   'http://localhost:3001',
 ];
