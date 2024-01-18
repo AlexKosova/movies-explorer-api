@@ -57,8 +57,8 @@ const signout = (req, res, next) => {
 }
 
 const getUser = (req, res, next) => {
-  const { email } = req.user;
-  User.findOne(email)
+  const { _id } = req.user;
+  User.findById(_id)
     .then((user) => {
       if (!user) {
         return next(new NotFoundError('Пользователь не найден'));
