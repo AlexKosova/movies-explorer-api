@@ -46,7 +46,7 @@ const login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_KEY : 'secret-11', {
         expiresIn: '7d',
       });
-      res.send(user);
+      res.send(user.toJSON());
     })
     .catch(next);
 };
@@ -57,8 +57,7 @@ const signout = (req, res, next) => {
 }
 
 const getUser = (req, res, next) => {
-  const { _id } = req.user;
-  User.findById(_id)
+  User.findById(req.user._id)
     .then((user) => {
       if (!user) {
         return next(new NotFoundError('Пользователь не найден'));
