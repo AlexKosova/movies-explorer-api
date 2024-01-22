@@ -58,10 +58,9 @@ const signout = (req, res, next) => {
 
 const getUser = (req, res, next) => {
   User.findById(req.user._id)
+    .onFail(() => next(new NotFoundError('Пользователь не найден')))
     .then((user) => {
-      if (!user) {
-        return next(new NotFoundError('Пользователь не найден'));
-      }
+      console.log(user);
       return res.send(user);
     })
     .catch(next);
