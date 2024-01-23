@@ -62,7 +62,7 @@ const getUser = (req, res, next) => {
     .onFail(() => next(new NotFoundError('Пользователь не найден')))
     .then((user) => {
       console.log(user);
-      return res.send(user.toJSON());
+      res.send(user);
     })
     .catch(next);
 };
@@ -75,7 +75,7 @@ const updateProfile = (req, res, next) => {
   };
   User.findByIdAndUpdate(_id, data, { new: true, runValidators: true })
     .then((user) => {
-      res.send(user.toJSON());
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
