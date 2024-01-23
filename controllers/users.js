@@ -75,7 +75,7 @@ const updateProfile = (req, res, next) => {
   };
   User.findByIdAndUpdate(_id, data, { new: true, runValidators: true })
     .then((user) => {
-      res.send(user);
+      res.send(user.toJSON());
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
