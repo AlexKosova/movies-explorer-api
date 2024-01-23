@@ -62,7 +62,7 @@ const getUser = (req, res, next) => {
     .onFail(() => next(new NotFoundError('Пользователь не найден')))
     .then((user) => {
       console.log(user);
-      res.send(user);
+      return res.send(user);
     })
     .catch(next);
 };
