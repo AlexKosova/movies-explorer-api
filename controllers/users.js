@@ -47,7 +47,10 @@ const login = (req, res, next) => {
         expiresIn: '7d',
       });
       res.cookie('jwt', token);
-      res.send({ token });
+      res.send({ 
+        jwt: token,
+        user: user,
+      });
     })
     .catch(next);
 };
